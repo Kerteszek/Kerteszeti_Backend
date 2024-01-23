@@ -25,4 +25,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //SuperAdmin réteg
 
 //Pot kiszerelés
-Route::get('pots', [PotController::class, 'index']);
+Route::get('pots', [PotController::class, 'index']); //OK
+
+

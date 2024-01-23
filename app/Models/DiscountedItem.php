@@ -9,6 +9,8 @@ class DiscountedItem extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
+        'product_id',
+        'discount_id'
+    
     ];
 }

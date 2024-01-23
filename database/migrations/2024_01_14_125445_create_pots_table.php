@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pots', function (Blueprint $table) {
-            $table->id('pot_id')->startFrom(200); //500-ig
+            $table->unsignedBigInteger('pot_id')->autoIncrement()->startingValue(200);
             $table->string('name', 30);
             $table->timestamps();
             //$table->primary('pot_id');

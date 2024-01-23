@@ -26,11 +26,11 @@ return new class extends Migration
             $table->primary('product_id');
         });
 
-        DB::table('products')->insert([
+        /* DB::table('products')->insert([
             ['scientific_name' => 'Pelargonium peltatum', 'name' => 'Futómuskátli', 'plant_category' => 106],
             ['scientific_name' => 'Viola x wittrockiana', 'name' => 'kerti árvácska', 'plant_category' => 106],
             ['scientific_name' => 'Paeonia officinalis', 'name' => 'Kerti bazsarózsa', 'plant_category' => 107],
-        ]);
+        ]); */
     }
 
     /**

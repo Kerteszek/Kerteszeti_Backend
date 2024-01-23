@@ -9,6 +9,8 @@ class Receipt extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'shopping_date',
+        'grand_total',
         
     ];
 }

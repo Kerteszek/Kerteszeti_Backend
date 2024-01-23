@@ -9,6 +9,9 @@ class Discount extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
+        'percentage',
+        'start_date',
+        'end_date'
+
     ];
 }

@@ -9,6 +9,9 @@ class Suppliance extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
+        'product',
+        'suppliance_date',
+        'number_of_items',
+        'purchase_price'
     ];
 }
