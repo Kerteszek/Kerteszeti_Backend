@@ -24,13 +24,24 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //felhasználó réteg (regisztálva, bejelentkezve)
 
 //Admin réteg
-Route::middleware(['admin'])->group(function () {
-    
-});
+
 
 Route::middleware(['auth.basic'])->group(function () {
-    Route::apiResource('/users', UserController::class);
+
+
+    Route::middleware(['admin'])->group(function () {
+        //elérheti az admin, és a superAdmin
+        Route::apiResource('/users', UserController::class);
+    });
+
+    Route::middleware(['superadmin'])->group(function () {
+
+        //Csak a superadmin érheti el
+
+
+    });
 });
+
 
 
 //SuperAdmin réteg

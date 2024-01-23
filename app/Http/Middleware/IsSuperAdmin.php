@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsAdmin
+class IsSuperAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,9 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->permission <= 1) {
-            //admin
+        if (Auth::user() && Auth::user()->permission == 0) {
             return $next($request);
         }
-        return redirect('/')->with('error', 'You have not admin access');
-        //a home még nincs kész, itt kell megadni a Terelést 
+        return redirect('/')->with('error', 'You have no Superadmin access');
     }
 }
