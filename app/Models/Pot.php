@@ -9,6 +9,6 @@ class Pot extends Model
 {
     use HasFactory;
     protected $fillable = [
-        
+        'name',
     ];
 }
