@@ -17,7 +17,7 @@ return new class extends Migration
             //$table->integer('pot');
             $table->string('scientific_name', 40);
             $table->foreign('scientific_name')->references('scientific_name')->on('plants');
-            $table->foreignId('pot')->references('pot_id')->on('pots');
+            $table->foreignId('unit')->references('unit_id')->on('units');
 
             $table->integer('price');
             $table->integer('in_stock');

@@ -2,36 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pot;
-use Illuminate\Http\Request;
 
-class PotController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Unit;
+
+
+class UnitController extends Controller
 {
     public function index()
     {
-        return Pot::all();
+        return Unit::all();
     }
 
     public function show($id)
     {
-        return Pot::find($id);
+        return Unit::find($id);
     }
 
     public function destroy($id)
     {
-        Pot::find($id)->delete();
+        Unit::find($id)->delete();
     }
 
     public function update(Request $request, $id)
     {
-        $pot = Pot::find($id);
+        $pot = Unit::find($id);
         $pot->name = $request->name;
         $pot->save();
     }
 
     public function store(Request $request)
     {
-        $pot = new Pot();
+        $pot = new Unit();
         $pot->name = $request->name;
         $pot->save();
     }

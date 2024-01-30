@@ -12,15 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pots', function (Blueprint $table) {
-            $table->unsignedBigInteger('pot_id')->autoIncrement()->startingValue(200);
+        Schema::create('units', function (Blueprint $table) {
+            $table->unsignedBigInteger('unit_id')->autoIncrement()->startingValue(200);
             $table->string('name', 30);
             $table->timestamps();
             //$table->primary('pot_id');
         });
 
-
-        DB::table('pots')->insert([
+        DB::table('units')->insert([
             ['name' => 'cserepes'],
             ['name' => 'ládás'],
             ['name' => '5l cserép'],
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pots');
+        Schema::dropIfExists('units');
     }
 };
