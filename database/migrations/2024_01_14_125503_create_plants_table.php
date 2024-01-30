@@ -19,7 +19,7 @@ return new class extends Migration
             // szezonja egyenlőre nem
             $table->timestamps();
 
-            $table->foreignId('plant_category')->references('plant_category')->on('plant_categories');
+            $table->foreignId('plant_category')->references('plant_category')->on('plant_categories'); //megszorítás csak a 107-től lehet megadni
             $table->primary(['scientific_name']);
         });
 
