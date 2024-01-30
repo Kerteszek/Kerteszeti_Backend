@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -20,6 +21,12 @@ return new class extends Migration
 
             $table->timestamps();
         });
+        DB::table('discounted_items')->insert([
+            ['product_id' => 1000, 'discount_id' => 600],
+            ['product_id' => 1001, 'discount_id' => 600],
+            ['product_id' => 1002, 'discount_id' => 602],
+
+        ]);
     }
 
     /**

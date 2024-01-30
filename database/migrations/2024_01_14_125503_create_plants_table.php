@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('scientific_name', 40)->unique();
             $table->string('name', 30);
             $table->string('color', 20)->default('NULL');
+            // szezonja egyenlőre nem
             $table->timestamps();
 
             $table->foreignId('plant_category')->references('plant_category')->on('plant_categories');

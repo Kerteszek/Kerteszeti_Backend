@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -21,6 +22,13 @@ return new class extends Migration
             $table->foreign('product')->references('product_id')->on('products');
             $table->primary(['product', 'suppliance_date']);
         });
+
+        DB::table('discounted_items')->insert([
+            ['product' => 1000, 'suppliance_date' => '2024-01-10', 'number_of_items' => 14, 'purchase_price' => 1100],
+            ['product_id' => 1001, 'suppliance_date' => '2024-01-10', 'number_of_items' => 14, 'purchase_price' => 1100],
+            ['product_id' => 1002, 'suppliance_date' => '2024-01-10', 'number_of_items' => 14, 'purchase_price' => 1100],
+
+        ]);
     }
 
     /**
