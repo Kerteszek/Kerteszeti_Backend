@@ -24,11 +24,12 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-        $product = Product::find($id);
-        $product->name = $request->name;
-        $product->pot = $request->pot;
-        $product->price = $request->price;
+        $product = Product::find($id);    
+        $product->scientific_name = $request->scientific_name;   
+        $product->unit_id = $request->unit_id;
+        $product->price = $request->price;        
         $product->in_stock = $request->in_stock;
+        $product->priority = $request->priority;
 
         $product->save();
     }
@@ -36,10 +37,11 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = new Product();
-        $product->name = $request->name;
-        $product->pot = $request->pot;
-        $product->price = $request->price;
+        $product->scientific_name = $request->scientific_name;   
+        $product->unit_id = $request->unit_id;
+        $product->price = $request->price;        
         $product->in_stock = $request->in_stock;
+        $product->priority = $request->priority;
         $product->save();
     }
 }

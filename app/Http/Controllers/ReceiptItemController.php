@@ -25,14 +25,14 @@ class ReceiptItemController extends Controller
     public function update(Request $request, $id)
     {
         $receiptItem = ReceiptItem::find($id);
-        $receiptItem->number_of_items = $request->number_of_items;        
+        $receiptItem->number_of_items = $request->number_of_items;
         $receiptItem->save();
     }
 
     public function store(Request $request)
     {
         $receiptItem = new ReceiptItem();
-        $receiptItem->number_of_items = $request->number_of_items;  
+        $receiptItem->number_of_items = $request->number_of_items;
         $receiptItem->save();
     }
 }

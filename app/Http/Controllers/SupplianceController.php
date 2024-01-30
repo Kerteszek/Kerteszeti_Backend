@@ -25,7 +25,6 @@ class SupplianceController extends Controller
     public function update(Request $request, $id)
     {
         $suppliance = Suppliance::find($id);
-        $suppliance->suppliance_date = $request->suppliance_date;
         $suppliance->number_of_items = $request->number_of_items;
         $suppliance->purchase_price = $request->purchase_price;
         $suppliance->save();
@@ -34,7 +33,6 @@ class SupplianceController extends Controller
     public function store(Request $request)
     {
         $suppliance = new Suppliance();
-        $suppliance->suppliance_date = $request->suppliance_date;
         $suppliance->number_of_items = $request->number_of_items;
         $suppliance->purchase_price = $request->purchase_price;
         $suppliance->save();
