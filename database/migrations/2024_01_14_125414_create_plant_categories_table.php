@@ -13,12 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('plant_categories', function (Blueprint $table) {
-            $table->unsignedBigInteger('plant_category')->autoIncrement()->startingValue(100);
-            //
+            $table->unsignedBigInteger('plant_category')->autoIncrement()->startingValue(100);            
             $table->string('name', 30);
             $table->integer('level')->default(3);
             $table->unsignedBigInteger('ancestor_category')->nullable();
-
             $table->timestamps();
 
             $table->foreign('ancestor_category')->references('plant_category')->on('plant_categories');
@@ -30,8 +28,8 @@ return new class extends Migration
 
         /**102 */  ['name' => 'Dísznövény', 'ancestor_category' => 100, 'level' => 2], //2
         /**103 */  ['name' => 'Haszonnövények', 'ancestor_category' => 100, 'level' => 2], //2
-        /**104 */   ['name' => 'Dísznövény', 'ancestor_category' => 101, 'level' => 2], //2
-        /**105 */   ['name' => 'Haszonnövények', 'ancestor_category' => 101, 'level' => 2], //2
+        /**104 */  ['name' => 'Dísznövény', 'ancestor_category' => 101, 'level' => 2], //2
+        /**105 */  ['name' => 'Haszonnövények', 'ancestor_category' => 101, 'level' => 2], //2
 
             ['name' => 'Egynyáriak', 'ancestor_category' => 102, 'level' => 3], //3
             ['name' => 'Évelő növények', 'ancestor_category' => 102, 'level' => 3], //3

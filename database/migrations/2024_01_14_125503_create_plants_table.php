@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('color', 20)->default('NULL');
             // szezonja egyenlőre nem
             $table->timestamps();
-
-            $table->foreignId('plant_category')->references('plant_category')->on('plant_categories'); //megszorítás csak a 107-től lehet megadni
+            $table->foreignId('plant_category')->references('plant_category')->on('plant_categories');
+            //megszorítás csak a 107-től lehet megadni
             $table->primary(['scientific_name']);
         });
 
