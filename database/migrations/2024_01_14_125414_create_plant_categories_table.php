@@ -15,26 +15,28 @@ return new class extends Migration
         Schema::create('plant_categories', function (Blueprint $table) {
             $table->unsignedBigInteger('plant_category')->autoIncrement()->startingValue(100);
             $table->string('name', 30);
+            $table->integer('level')->default(3);
             $table->unsignedBigInteger('ancestor_category')->nullable();
+
             $table->timestamps();
 
             $table->foreign('ancestor_category')->references('plant_category')->on('plant_categories');
         });
 
         DB::table('plant_categories')->insert([
-            ['name' => 'Mag', 'ancestor_category' => NULL], //1
-            ['name' => 'Élő növény', 'ancestor_category' => NULL], //1            
+            ['name' => 'Mag', 'ancestor_category' => NULL, 'level' => 1], //1
+            ['name' => 'Élő növény', 'ancestor_category' => NULL, 'level' => 1], //1            
 
-            ['name' => 'Dísznövény', 'ancestor_category' => 100], //2
-            ['name' => 'Haszonnövények', 'ancestor_category' => 100], //2
-            ['name' => 'Dísznövény', 'ancestor_category' => 101], //2
-            ['name' => 'Haszonnövények', 'ancestor_category' => 101], //2
+            ['name' => 'Dísznövény', 'ancestor_category' => 100, 'level' => 2], //2
+            ['name' => 'Haszonnövények', 'ancestor_category' => 100, 'level' => 2], //2
+            ['name' => 'Dísznövény', 'ancestor_category' => 101, 'level' => 2], //2
+            ['name' => 'Haszonnövények', 'ancestor_category' => 101, 'level' => 2], //2
 
-            ['name' => 'Egynyáriak', 'ancestor_category' => 102], //3
-            ['name' => 'Évelő növények', 'ancestor_category' => 102], //3
-            ['name' => 'Sziklakerti növények', 'ancestor_category' => 102], //3
-            ['name' => 'Bogyós gyümölcsök', 'ancestor_category' => 102], //3
-            ['name' => 'Zöldségek, Fűszernövények', 'ancestor_category' => 102], //3
+            ['name' => 'Egynyáriak', 'ancestor_category' => 102, 'level' => 3], //3
+            ['name' => 'Évelő növények', 'ancestor_category' => 102, 'level' => 3], //3
+            ['name' => 'Sziklakerti növények', 'ancestor_category' => 102, 'level' => 3], //3
+            ['name' => 'Bogyós gyümölcsök', 'ancestor_category' => 102, 'level' => 3], //3
+            ['name' => 'Zöldségek, Fűszernövények', 'ancestor_category' => 102, 'level' => 3], //3
         ]);
     }
 
