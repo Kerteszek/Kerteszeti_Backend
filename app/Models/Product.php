@@ -10,7 +10,10 @@ class Product extends Model
     use HasFactory;
     protected $fillable = [
         'scientific_name',
-        'pot',
+        'state',
+        'type',
+        'color',
+        'unit',
         'price',
         'in_stock'
     ];

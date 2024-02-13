@@ -12,6 +12,5 @@ class Plant extends Model
         'scientific_name',
         'name',
         'plant_category',
-        'color'
     ];
 }

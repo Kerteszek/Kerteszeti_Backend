@@ -10,6 +10,5 @@ class PlantCategory extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'ancestor_category'
     ];
 }
