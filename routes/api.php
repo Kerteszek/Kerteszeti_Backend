@@ -45,6 +45,3 @@ Route::middleware(['auth.basic'])->group(function () {
 
 
 //SuperAdmin réteg
-
-//Pot kiszerelés
-Route::get('pots', [PotController::class, 'index']); //OK
