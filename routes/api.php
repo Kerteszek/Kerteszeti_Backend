@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,10 @@ Route::middleware(['auth.basic'])->group(function () {
 
     });
 });
+//Termékek
+Route::get('products', [ProductController::class, 'index']);
+
+/**Route::post('lendings', [LendingController::class, 'store']);
+    Route::get('reservations/{user_id}/{book_id}/{start}', [ReservationController::class, 'show']);
+    Route::patch('reservations/{user_id}/{book_id}/{start}', [ReservationController::class, 'update']);
+    Route::post('reservations', [ReservationController::class, 'store']); */
