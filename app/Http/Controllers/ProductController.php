@@ -26,11 +26,14 @@ class ProductController extends Controller
     {
         $product = Product::find($id);    
         $product->scientific_name = $request->scientific_name;   
-        $product->unit_id = $request->unit_id;
+        $product->status = $request->status;
+        $product->type = $request->type;
+        $product->color = $request->color;
+        $product->unit = $request->unit;
         $product->price = $request->price;        
         $product->in_stock = $request->in_stock;
+        $product->reserved = $request->reserved;
         $product->priority = $request->priority;
-
         $product->save();
     }
 
@@ -38,9 +41,13 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->scientific_name = $request->scientific_name;   
-        $product->unit_id = $request->unit_id;
+        $product->status = $request->status;
+        $product->type = $request->type;
+        $product->color = $request->color;
+        $product->unit = $request->unit;
         $product->price = $request->price;        
         $product->in_stock = $request->in_stock;
+        $product->reserved = $request->reserved;
         $product->priority = $request->priority;
         $product->save();
     }

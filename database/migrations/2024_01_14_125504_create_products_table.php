@@ -17,16 +17,24 @@ return new class extends Migration
             //$table->integer('pot');
             $table->string('scientific_name', 40); //term key
             $table->foreign('scientific_name')->references('scientific_name')->on('plants');
+            //MEGJ.: 2 plusz kategória: állapot és típus, booleannal
+            //false: mag, true: élőnövény
+            $table->boolean('status')->default(false);
+            //false: haszonnövény, true: dísznövény
+            $table->boolean('type')->default(false);
+            $table->string('color', 20)->default('NULL');
             $table->foreignId('unit')->references('unit_id')->on('units'); //term key
-
             $table->integer('price');
             $table->integer('in_stock');
+            //+1 mező: lefoglalt mennyiség(kosárba rakástól számítva)
+            $table->integer('reserved');
             $table->boolean('priority')->default(false); //kiemelt
             $table->timestamps();
 
             //$table->primary('product_id');
         });
 
+        /*
         DB::table('products')->insert([
             ['scientific_name' => 'Pelargonium peltatum', 'unit' => 200, 'price' => 1300, 'in_stock' => 32],
             ['scientific_name' => 'Pelargonium peltatum', 'unit' => 201, 'price' => 4000, 'in_stock' => 10],
@@ -36,6 +44,7 @@ return new class extends Migration
             ['scientific_name' => 'Viola x wittrockiana', 'unit' => 203, 'price' => 6600, 'in_stock' => 37],
             ['scientific_name' => 'Paeonia officinalis', 'unit' => 200, 'price' => 1300, 'in_stock' => 32],
         ]);
+        */
     }
 
     /**

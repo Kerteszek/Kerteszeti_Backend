@@ -15,19 +15,19 @@ return new class extends Migration
         Schema::create('plants', function (Blueprint $table) {
             $table->string('scientific_name', 40)->unique();
             $table->string('name', 30);
-            $table->string('color', 20)->default('NULL');
-            // szezonja egyenlőre nem
             $table->timestamps();
             $table->foreignId('plant_category')->references('plant_category')->on('plant_categories');
             //megszorítás csak a 107-től lehet megadni
             $table->primary(['scientific_name']);
         });
 
+        /*
         DB::table('plants')->insert([
             ['scientific_name' => 'Pelargonium peltatum', 'name' => 'Futómuskátli', 'plant_category' => 106],
             ['scientific_name' => 'Viola x wittrockiana', 'name' => 'kerti árvácska', 'plant_category' => 106],
             ['scientific_name' => 'Paeonia officinalis', 'name' => 'Kerti bazsarózsa', 'plant_category' => 107],
         ]);
+        */
     }
 
     /**
