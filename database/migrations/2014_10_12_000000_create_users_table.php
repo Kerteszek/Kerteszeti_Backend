@@ -34,6 +34,20 @@ return new class extends Migration
             ],
 
             [
+                'name' => 'Tóth Béla'
+                ,'email' => 'belus@gmail.com'
+                ,'password' => Hash::make('Aa123@')
+                ,'permission' => 2
+            ],
+
+            [
+                'name' => 'Horváth Ilona'
+                ,'email' => 'ilcsi@gmail.com'
+                ,'password' => Hash::make('Aa123@')
+                ,'permission' => 2
+            ],
+
+            [
                 'name' => 'Admin'
                 ,'email' => 'admin@gmail.com'
                 ,'password' => Hash::make('Aa123@')

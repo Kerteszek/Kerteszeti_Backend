@@ -20,10 +20,11 @@ return new class extends Migration
         });
 
         DB::table('units')->insert([
-            ['name' => 'cserepes'],
-            ['name' => 'ládás'],
+            ['name' => '12 cm cserép'],
             ['name' => '5l cserép'],
-            ['name' => 'csomagos'],
+            ['name' => '5g'],
+            ['name' => '100g'],
+            ['name' => 'gyökércsomagolt'],
         ]);
     }
 

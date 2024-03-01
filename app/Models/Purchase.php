@@ -9,6 +9,7 @@ class Purchase extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'buyer',
         'shopping_date',
         'grand_total',
     ];

@@ -19,6 +19,7 @@ return new class extends Migration
             //$table->unsignedBigInteger('ancestor_category')->nullable();
             $table->timestamps();
 
+            //$table->primary(['plant_category']);
             //$table->foreign('ancestor_category')->references('plant_category')->on('plant_categories');
         });
 
@@ -41,17 +42,17 @@ return new class extends Migration
 
         //MEGJ.: a termékekbe raktruk át a mag/élő, dísz/haszon kategóriát, booleannal, az egyszerűsítés kedvéért, itt maradnak az alkategóriák
         //de már nem referálnak ős vagy felettes kateg.-re, így csak id és elnevezés van, az elnevezés kitöltendő!!!
-            ['name' => 'Egynyáriak'],
-            ['name' => 'Évelő növények'],
-            ['name' => 'Sziklakerti növények'],
-            ['name' => 'Bogyós gyümölcsök'],
-            ['name' => 'Zöldségek'],
-            ['name' => 'Fűszernövények'],
-            ['name' => 'Rózsák'],
-            ['name' => 'Bazsarózsák'],
-            ['name' => 'Liliomok'],
-            ['name' => 'Jácint'],
-            ['name' => 'Egyéb hagymások'],
+            ['name' => 'Egynyáriak'], //0
+            ['name' => 'Évelő növények'], //1
+            ['name' => 'Sziklakerti növények'], //2
+            ['name' => 'Bogyós gyümölcsök'], //3
+            ['name' => 'Zöldségek'], //4
+            ['name' => 'Fűszernövények'], //5
+            ['name' => 'Rózsák'], //6
+            ['name' => 'Bazsarózsák'], //7
+            ['name' => 'Liliomok'], //8
+            ['name' => 'Jácint'], //9
+            ['name' => 'Egyéb hagymások'], //10
         ]);
     }
 

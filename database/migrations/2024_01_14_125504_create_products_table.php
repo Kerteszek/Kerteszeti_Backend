@@ -34,17 +34,21 @@ return new class extends Migration
             //$table->primary('product_id');
         });
 
-        /*
         DB::table('products')->insert([
-            ['scientific_name' => 'Pelargonium peltatum', 'unit' => 200, 'price' => 1300, 'in_stock' => 32],
-            ['scientific_name' => 'Pelargonium peltatum', 'unit' => 201, 'price' => 4000, 'in_stock' => 10],
-            ['scientific_name' => 'Pelargonium peltatum', 'unit' => 202, 'price' => 13000, 'in_stock' => 2],
-            ['scientific_name' => 'Viola x wittrockiana', 'unit' => 200, 'price' => 3300, 'in_stock' => 32],
-            ['scientific_name' => 'Viola x wittrockiana', 'unit' => 202, 'price' => 400, 'in_stock' => 43],
-            ['scientific_name' => 'Viola x wittrockiana', 'unit' => 203, 'price' => 6600, 'in_stock' => 37],
-            ['scientific_name' => 'Paeonia officinalis', 'unit' => 200, 'price' => 1300, 'in_stock' => 32],
+            ['scientific_name' => 'Pelargonium peltatum', 'status'=> true, 'type'=> true, 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0],
+            ['scientific_name' => 'Viola x wittrockiana', 'status'=> true, 'type'=> true, 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0],
+            ['scientific_name' => 'Paeonia officinalis', 'status'=> true, 'type'=> true, 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0],
+            //['scientific_name' => 'Rosa hybrid', 'status'=> true, 'type'=> true, 'color'=>'vörös', 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0], //vörös
+            //['scientific_name' => 'Rosa Austiger',  'status'=> true, 'type'=> true, 'color'=>'rózsaszín', 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0], //rózsaszín
+            //['scientific_name' => 'Rosa Lady of Shalott',  'status'=> true, 'type'=> true, 'color'=>'narancs', 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0], //narancs
+            ['scientific_name' => 'Salvia officinalis',  'status'=> true, 'type'=> true, 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0],
+            ['scientific_name' => 'Salvia rosmarinus',  'status'=> true, 'type'=> true, 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0],
+            ['scientific_name' => 'Cucumis sativus',  'status'=> true, 'type'=> true, 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0],
+            //['scientific_name' => 'Cucurbita pepo Goldena', 'status'=> true, 'type'=> true, 'color'=>'sárga', 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0], //sárga
+            //['scientific_name' => 'Cucurbita pepo', 'status'=> true, 'type'=> true, 'color'=>'zöld', 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0], //ződ
+            //['scientific_name' => 'Cucurbita pepo Lajkonik',  'status'=> true, 'type'=> true, 'color'=>'csíkos', 'unit' => 200, 'price'=>690, 'in_stock' => 50, 'reserved' => 0], //csíkos
         ]);
-        */
+
     }
 
     /**

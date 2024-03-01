@@ -25,6 +25,7 @@ class PurchaseController extends Controller
     public function update(Request $request, $id)
     {
         $purchase = Purchase::find($id);
+        $purchase->buyer = $request->buyer;
         $purchase->shopping_date = $request->shopping_date;
         $purchase->grand_total = $request->grand_total;
         $purchase->save();
@@ -33,6 +34,7 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         $purchase = new Purchase();
+        $purchase->buyer = $request->buyer;
         $purchase->shopping_date = $request->shopping_date;
         $purchase->grand_total = $request->grand_total;
         $purchase->save();

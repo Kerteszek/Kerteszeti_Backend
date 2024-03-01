@@ -21,13 +21,23 @@ return new class extends Migration
             $table->primary(['scientific_name']);
         });
 
-        /*
+        //https://rozsamania.hu/ajanlott-rozsafajtak/
+        //https://www.terra.hu/haznov/htm/latidx.html
         DB::table('plants')->insert([
-            ['scientific_name' => 'Pelargonium peltatum', 'name' => 'Futómuskátli', 'plant_category' => 106],
-            ['scientific_name' => 'Viola x wittrockiana', 'name' => 'kerti árvácska', 'plant_category' => 106],
+            ['scientific_name' => 'Pelargonium peltatum', 'name' => 'Futómuskátli', 'plant_category' => 100],
+            ['scientific_name' => 'Viola x wittrockiana', 'name' => 'kerti árvácska', 'plant_category' => 100],
             ['scientific_name' => 'Paeonia officinalis', 'name' => 'Kerti bazsarózsa', 'plant_category' => 107],
+            ['scientific_name' => 'Rosa hybrid', 'name' => 'Munstead wood', 'plant_category' => 106], //vörös
+            ['scientific_name' => 'Rosa Austiger', 'name' => 'Queen of Sweden', 'plant_category' => 106], //rózsaszín
+            ['scientific_name' => 'Rosa Lady of Shalott', 'name' => 'Lady of shalott', 'plant_category' => 106], //narancs
+            ['scientific_name' => 'Salvia officinalis', 'name' => 'Orvosi zsálya', 'plant_category' => 105],
+            ['scientific_name' => 'Salvia rosmarinus', 'name' => 'Rozmaring', 'plant_category' => 105],
+            ['scientific_name' => 'Cucumis sativus', 'name' => 'Uborka', 'plant_category' => 104],
+            ['scientific_name' => 'Cucurbita pepo Goldena', 'name' => 'Cukkini', 'plant_category' => 104], //sárga
+            ['scientific_name' => 'Cucurbita pepo', 'name' => 'Cukkini', 'plant_category' => 104], //ződ
+            ['scientific_name' => 'Cucurbita pepo Lajkonik', 'name' => 'Cukkini', 'plant_category' => 104], //csíkos
         ]);
-        */
+        
     }
 
     /**
