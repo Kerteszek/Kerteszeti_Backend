@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('purchase_items', function (Blueprint $table) {
             $table->unsignedBigInteger('purchase_number')->startFrom(1000000);
-            $table->foreign('purchase_number')->references('purchase_number')->on('purchase');
+            $table->foreign('purchase_number')->references('purchase_number')->on('purchases');
 
             $table->integer('product_id');
             $table->foreign('product_id')->references('product_id')->on('products');
