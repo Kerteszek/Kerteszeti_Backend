@@ -13,26 +13,25 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('purchases', function (Blueprint $table) {
-            $table->unsignedBigInteger('purchase_number')->startFrom(1000000)->unique();
+            $table->unsignedBigInteger('purchase_number')->autoIncrement()->startingValue(1000000);
             //$table->integer('buyer');
             $table->foreignId('buyer')->references('id')->on('users');
             $table->dateTime('shopping_date')->default(now());
-            $table->integer('grand_total');
+            $table->integer('grand_total')->unsigned()->nullable();
             $table->timestamps();
-            $table->primary('purchase_number');
+            //$table->primary('purchase_number');
         });
 
-        
+
         DB::table('purchases')->insert([
-            ['buyer' => 1, 'shopping_date' => 2023-05-17],
-            ['buyer' => 2, 'shopping_date' => 2024-01-05],
-            //['buyer' => 2, 'shopping_date' => '20231129'],
-            //['buyer' => 3, 'shopping_date' => '20230706'],
-            //['buyer' => 2, 'shopping_date' => '20230313'],
+            ['buyer' => 1, 'shopping_date' => '2023-05-17'],
+            ['buyer' => 2, 'shopping_date' => '2024-01-05'],
+            ['buyer' => 2, 'shopping_date' => '2023-11-29'],
+            ['buyer' => 3, 'shopping_date' => '2023-07-06'],
+            ['buyer' => 2, 'shopping_date' => '2023-03-13'],
             //['buyer' => 3],
             //['buyer' => 1],
         ]);
-        
     }
 
     /**
