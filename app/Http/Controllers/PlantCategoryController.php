@@ -26,7 +26,7 @@ class PlantCategoryController extends Controller
     {
         $plantCategorie = PlantCategory::find($id);
         $plantCategorie->name = $request->name;
-        $plantCategorie->ancestor_category = $request->ancestor_category;
+        //$plantCategorie->ancestor_category = $request->ancestor_category;
         $plantCategorie->save();
     }
 
@@ -34,7 +34,7 @@ class PlantCategoryController extends Controller
     {
         $plantCategorie = new PlantCategory();
         $plantCategorie->name = $request->name;
-        $plantCategorie->ancestor_category = $request->ancestor_category;
+        //$plantCategorie->ancestor_category = $request->ancestor_category;
         $plantCategorie->save();
     }
 }

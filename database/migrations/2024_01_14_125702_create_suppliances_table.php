@@ -23,12 +23,14 @@ return new class extends Migration
             $table->primary(['product', 'suppliance_date']);
         });
 
+        /*
         DB::table('suppliances')->insert([
             ['product' => 1000, 'suppliance_date' => '2024-01-10', 'number_of_items' => 4, 'purchase_price' => 1100],
             ['product' => 1001, 'suppliance_date' => '2024-01-10', 'number_of_items' => 2, 'purchase_price' => 1100],
             ['product' => 1002, 'suppliance_date' => '2024-01-10', 'number_of_items' => 6, 'purchase_price' => 1100],
 
         ]);
+        */
     }
 
     /**

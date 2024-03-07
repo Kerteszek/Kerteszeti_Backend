@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_changes', function (Blueprint $table) {
-            $table->integer('product_id');
-            $table->foreign('product_id')->references('product_id')->on('products');
+        Schema::create('product_prices', function (Blueprint $table) {
+            $table->integer('product');
+            $table->foreign('product')->references('product_id')->on('products');
             $table->dateTime('change_date')->default(now());
-            $table->integer('old_price');
+            $table->integer('new_price');
             $table->timestamps();
-
-            $table->primary(['product_id', 'change_date']);
+            $table->primary(['product', 'change_date']);
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_changes');
+        Schema::dropIfExists('product_prices');
     }
 };

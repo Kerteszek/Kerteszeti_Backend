@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Receipt extends Model
+class ProductPrice extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'shopping_date',
-        'grand_total',
-        
+        'product',
+        'change_date',
+        'new_price',
     ];
 }

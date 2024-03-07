@@ -27,7 +27,7 @@ class PlantController extends Controller
         $plant = Plant::find($id);
         $plant->name = $request->name;
         $plant->ancestor_category = $request->ancestor_category;
-        $plant->color = $request->color;
+        //$plant->color = $request->color;
         $plant->save();
     }
 
@@ -36,7 +36,7 @@ class PlantController extends Controller
         $plant = new Plant();
         $plant->name = $request->name;
         $plant->ancestor_category = $request->ancestor_category;
-        $plant->color = $request->color;
+        //$plant->color = $request->color;
         $plant->save();
     }
 }
