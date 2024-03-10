@@ -42,6 +42,8 @@ Route::middleware(['auth.basic'])->group(function () {
         //Csak a superadmin érheti el
         //Route::delete('/products/{product_id}', [PlantController::class, 'destroy']);
         Route::get('users', [UserController::class, 'index']);
+
+        Route::delete('/user_delete/{user_id}', [UserController::class, 'destroy']);
     });
 });
 

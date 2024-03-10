@@ -25,7 +25,7 @@ return new class extends Migration
         });
 
         DB::table('users')->insert([
-            //majd Hash
+            //majd Hash            
             [
                 'name' => 'Vásárló'
                 ,'email' => 'vasarlo@gmail.com'
@@ -65,6 +65,13 @@ return new class extends Migration
                 ,'email' => 'vendeg@gmail.com'
                 ,'password' => Hash::make('Aa123@')
                 ,'permission' => 0
+            ],
+
+            [
+                'name' => 'Törlendő'
+                ,'email' => 'torlendo@gmail.com'
+                ,'password' => Hash::make('Aa123@')
+                ,'permission' => 2
             ],
 
         ]);
