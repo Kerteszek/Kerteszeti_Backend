@@ -17,9 +17,8 @@ return new class extends Migration
             //$table->integer('buyer');
             $table->foreignId('buyer')->references('id')->on('users');
             $table->dateTime('shopping_date')->default(now());
-            $table->integer('grand_total')->unsigned()->nullable();
+            $table->integer('grand_total')->unsigned()->nullable()->protected();
             $table->timestamps();
-            
         });
 
 
@@ -32,6 +31,8 @@ return new class extends Migration
             //['buyer' => 3],
             //['buyer' => 1],
         ]);
+
+        DB::statement('ALTER TABLE purchases ADD CONSTRAINT check_grand_total CHECK (grand_total >= 0)');
     }
 
     /**
