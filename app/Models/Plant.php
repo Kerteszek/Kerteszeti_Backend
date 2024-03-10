@@ -9,7 +9,6 @@ class Plant extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'scientific_name',
         'name',
         'plant_category',
     ];

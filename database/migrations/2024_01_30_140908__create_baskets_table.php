@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('baskets', function (Blueprint $table) {
-            $table->integer('basket_id')->autoIncrement()->startingValue(10000);
-            $table->integer('product_id');
-            $table->foreign('product_id')->references('product_id')->on('products');
+            $table->integer('basket_id')->autoIncrement()->startingValue(100000);
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();
         });

@@ -13,13 +13,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('purchases', function (Blueprint $table) {
-            $table->unsignedBigInteger('purchase_number')->autoIncrement()->startingValue(1000000);
+            $table->unsignedBigInteger('purchase_number')->autoIncrement()->startingValue(10000000);
             //$table->integer('buyer');
             $table->foreignId('buyer')->references('id')->on('users');
             $table->dateTime('shopping_date')->default(now());
             $table->integer('grand_total')->unsigned()->nullable();
             $table->timestamps();
-            //$table->primary('purchase_number');
+            
         });
 
 
