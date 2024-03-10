@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PictureController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,12 +21,8 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//felhasználó réteg (regisztráció nélkül)
+
 //felhasználó réteg (regisztálva, bejelentkezve)
-
-//Admin réteg
-
-
 Route::middleware(['auth.basic'])->group(function () {
 
 
@@ -41,6 +39,8 @@ Route::middleware(['auth.basic'])->group(function () {
     });
 });
 
+//felhasználó réteg (regisztráció nélkül)
+Route::get('products', [ProductController::class, 'index']);
+//Képek elérési útja
+Route::get('pictures', [PictureController::class, 'index']);
 
-
-//SuperAdmin réteg
