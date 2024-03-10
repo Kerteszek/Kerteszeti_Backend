@@ -29,10 +29,10 @@ Route::middleware(['auth.basic'])->group(function () {
     Route::middleware(['admin'])->group(function () {
         //elérheti az admin, és a superAdmin
         Route::apiResource('/users', UserController::class);
+        //Route::post('products', [ProductController::class, 'store']);
     });
 
     Route::middleware(['superadmin'])->group(function () {
-
         //Csak a superadmin érheti el
 
 
@@ -41,6 +41,9 @@ Route::middleware(['auth.basic'])->group(function () {
 
 //felhasználó réteg (regisztráció nélkül)
 Route::get('products', [ProductController::class, 'index']);
+
+//Termék összes frontendremenő adata
+Route::get('product_frontend', [ProductController::class, 'frontendTermek']);
+
 //Képek elérési útja
 Route::get('pictures', [PictureController::class, 'index']);
-
