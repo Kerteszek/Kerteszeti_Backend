@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -12,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('purchase_items', function (Blueprint $table) {
-            $table->unsignedBigInteger('purchase_number')->startFrom(1000000);
+            $table->unsignedBigInteger('purchase_number');
             $table->foreign('purchase_number')->references('purchase_number')->on('purchases');
 
             $table->integer('product_id');
@@ -21,6 +22,13 @@ return new class extends Migration
             $table->timestamps();
             $table->primary(['purchase_number', 'product_id']);
         });
+
+        DB::table('purchase_items')->insert([
+            ['purchase_number' => 10000000, 'product_id' => 1006, 'quantity'=> 5],
+           
+            //['buyer' => 3],
+            //['buyer' => 1],
+        ]);
     }
 
     /**

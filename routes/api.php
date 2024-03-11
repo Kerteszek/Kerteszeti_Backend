@@ -3,6 +3,7 @@
 use App\Http\Controllers\PictureController;
 use App\Http\Controllers\PlantController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PurchaseItemController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -58,3 +59,7 @@ Route::get('product_w_pictures', [ProductController::class, 'frontendTermekKeppe
 
 //Képek elérési útja
 Route::get('pictures', [PictureController::class, 'index']);
+
+
+//Trigger útvonalak teszthez
+Route::post('purchase_items', [PurchaseItemController::class, 'store']);
