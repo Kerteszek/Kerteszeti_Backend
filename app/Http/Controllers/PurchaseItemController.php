@@ -44,6 +44,8 @@ class PurchaseItemController extends Controller
 
     public function store(Request $request)
     {
+        //majd késöbb lekezelni bejelentkezett felhasználóra
+        //Jelenlegi változat teszteléshez Jó
         $validator = Validator::make($request->all(), [
             'purchase_number' => 'required',
             'product_id' => 'required',
