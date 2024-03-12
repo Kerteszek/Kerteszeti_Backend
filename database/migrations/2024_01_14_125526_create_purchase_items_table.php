@@ -24,8 +24,10 @@ return new class extends Migration
         });
 
         DB::table('purchase_items')->insert([
-            ['purchase_number' => 10000000, 'product_id' => 1006, 'quantity'=> 5],
-           
+            ['purchase_number' => 10000000, 'product_id' => 1006, 'quantity' => 5],
+            ['purchase_number' => 10000000, 'product_id' => 1008, 'quantity' => 4],
+            ['purchase_number' => 10000001, 'product_id' => 1006, 'quantity' => 21],
+
             //['buyer' => 3],
             //['buyer' => 1],
         ]);

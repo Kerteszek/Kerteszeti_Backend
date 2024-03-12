@@ -16,19 +16,35 @@ class PurchaseItemController extends Controller
         return PurchaseItem::all();
     }
 
-    public function show($id)
+    public function show($purchase_number, $product_id)
     {
-        return PurchaseItem::find($id);
+        //return PurchaseItem::find($purchase_number, $product_id);
+        $purchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
+            ->where('product_id', $product_id)
+            ->get();
+
+        return $purchaseItem[0];
     }
 
-    public function destroy($id)
+    public function destroy($purchase_number, $product_id)
     {
-        PurchaseItem::find($id)->delete();
+        $purchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
+            ->where('product_id', $product_id)
+            ->first();
+
+        if (!$purchaseItem) {
+            return response()->json(['message' => 'Purchase item not found'], 404);
+        }
+
+        $purchaseItem->delete();
+
+        return response()->json(['message' => 'Purchase item deleted successfully'], 200);
     }
 
-    public function update(Request $request, $id)
+
+    public function update(Request $request, $purchase_number, $product_id)
     {
-        $purchaseItem = PurchaseItem::find($id);
+        $purchaseItem = PurchaseItem::find($purchase_number, $product_id);
         $purchaseItem->quantity = $request->quantity;
         $purchaseItem->save();
     }

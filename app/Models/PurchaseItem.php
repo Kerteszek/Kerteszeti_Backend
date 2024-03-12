@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PurchaseItem extends Model
 {
     use HasFactory;
+
+  /*   protected $primaryKey = ['purchase_number', 'product_id'];
+    public $incrementing = false; */
     protected $fillable = [
         'purchase_number',
         'product_id',
