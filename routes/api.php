@@ -64,10 +64,10 @@
     //Trigger útvonalak teszthez
 
     Route::get('purchase_items', [PurchaseItemController::class, 'index']);
-
-
-    Route::post('purchase_items', [PurchaseItemController::class, 'store']);
+    Route::get('purchase_items/{purchase_number}/{product_id}', [PurchaseItemController::class, 'show']);
 
     Route::patch('purchase_items/{purchase_number}/{product_id}', [PurchaseItemController::class, 'update']);
+
+    Route::post('purchase_items', [PurchaseItemController::class, 'store']);
 
     Route::delete('purchase_items/{purchase_number}/{product_id}', [PurchaseItemController::class, 'destroy']);
