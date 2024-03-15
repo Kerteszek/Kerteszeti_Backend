@@ -4,6 +4,7 @@
     use App\Http\Controllers\PlantController;
     use App\Http\Controllers\ProductController;
     use App\Http\Controllers\PurchaseItemController;
+    use App\Http\Controllers\SupplianceController;
     use App\Http\Controllers\UserController;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
@@ -63,11 +64,16 @@
 
     //Trigger útvonalak teszthez
 
+    //Pucchase Item  útvonalak, átszervezni majd adminokhoz
     Route::get('purchase_items', [PurchaseItemController::class, 'index']);
     Route::get('purchase_items/{purchase_number}/{product_id}', [PurchaseItemController::class, 'show']);
-
     Route::patch('purchase_items/{purchase_number}/{product_id}', [PurchaseItemController::class, 'update']);
-
     Route::post('purchase_items', [PurchaseItemController::class, 'store']);
-
     Route::delete('puritem_delete/{purchase_number}/{product_id}', [PurchaseItemController::class, 'destroy']);
+
+    //New stock  (suppliance)
+    Route::get('suppliances', [SupplianceController::class, 'index']);
+    Route::get('suppliances/{purchase_number}/{product_id}', [SupplianceController::class, 'show']);
+    //Route::patch('purchase_items/{purchase_number}/{product_id}', [SupplianceController::class, 'update']);
+    Route::post('suppliances', [SupplianceController::class, 'store']);
+    //Route::delete('puritem_delete/{purchase_number}/{product_id}', [SupplianceController::class, 'destroy']);

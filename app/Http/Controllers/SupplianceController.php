@@ -22,9 +22,11 @@ class SupplianceController extends Controller
         Suppliance::find($id)->delete();
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $product, $suppliance_date)
     {
-        $suppliance = Suppliance::find($id);
+        $suppliance = Suppliance::find($product,  $suppliance_date);
+        $suppliance->product = $request->product;
+        $suppliance->suppliance_date = $request->$suppliance_date;
         $suppliance->number_of_items = $request->number_of_items;
         $suppliance->purchase_price = $request->purchase_price;
         $suppliance->save();
@@ -33,8 +35,17 @@ class SupplianceController extends Controller
     public function store(Request $request)
     {
         $suppliance = new Suppliance();
+        $suppliance->product = $request->product;
+
+        if ($request->has('suppliance_date')) {
+            $suppliance->suppliance_date = $request->suppliance_date;
+        } else {
+            $suppliance->suppliance_date = now();
+        }
+
         $suppliance->number_of_items = $request->number_of_items;
         $suppliance->purchase_price = $request->purchase_price;
+
         $suppliance->save();
     }
 }

@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-       /*  DB::unprepared('CREATE TRIGGER product_sold 
+        DB::unprepared('CREATE TRIGGER product_sold 
         AFTER INSERT ON purchase_items
         FOR EACH ROW
         BEGIN
@@ -23,7 +23,18 @@ return new class extends Migration
                 UPDATE products SET in_stock = in_stock - NEW.quantity WHERE product_id = NEW.product_id;
             END IF;
         END
-        '); */
+        ');
+
+        DB::unprepared('CREATE TRIGGER product_added 
+        AFTER INSERT ON suppliances
+        FOR EACH ROW
+        BEGIN
+            DECLARE available_stock INT;            
+            SELECT in_stock INTO available_stock FROM products WHERE product_id = NEW.product;                          
+            UPDATE products SET in_stock = in_stock + NEW.number_of_items WHERE product_id = NEW.product;
+            
+        END
+        ');
     }
 
     /**
@@ -31,6 +42,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-       /*  DB::unprepared('DROP TRIGGER IF EXISTS product_sold'); */
+        DB::unprepared('DROP TRIGGER IF EXISTS product_sold');
+        DB::unprepared('DROP TRIGGER IF EXISTS product_added');
     }
 };
