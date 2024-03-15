@@ -70,4 +70,4 @@
 
     Route::post('purchase_items', [PurchaseItemController::class, 'store']);
 
-    Route::delete('purchase_items/{purchase_number}/{product_id}', [PurchaseItemController::class, 'destroy']);
+    Route::delete('puritem_delete/{purchase_number}/{product_id}', [PurchaseItemController::class, 'destroy']);

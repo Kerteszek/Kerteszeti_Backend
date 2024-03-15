@@ -7,8 +7,7 @@ use App\Models\PurchaseItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 
 
 class PurchaseItemController extends Controller
@@ -20,48 +19,44 @@ class PurchaseItemController extends Controller
 
     public function show($purchase_number, $product_id)
     {
-        $purchaseItem = PurchaseItem::where('purchase_number',  $purchase_number)
+        $purchaseItem = PurchaseItem::where('purchase_number',  $purchase_number, 'and')
             ->where('product_id',  $product_id)
             //->first();
             ->get();
+        // return $purchaseItem;
 
-        if (!$purchaseItem) {
+        if ($purchaseItem->isEmpty()) {
             return response()->json(['message' => 'Purchase item nem létezik!'], 404);
         }
-
-        //return $purchaseItem;
         return $purchaseItem[0];
     }
-    /* public function show($purchase_number, $product_id)
-    {
-        $purchaseItem = PurchaseItem::where('purchase_number',  $purchase_number)
-            ->where('product_id',  $product_id)
-            ->get();
-            
 
-        return $purchaseItem[0];
-    } */
     public function destroy($purchase_number, $product_id)
     {
-        $purchaseItem = $this->show($purchase_number, $product_id)->first();
+        try {
+            $purchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
+                ->where('product_id', $product_id)
+                ->delete();
 
-        if (!$purchaseItem) {
-            return response()->json(['message' => 'Purchase item not found!'], 404);
+            if (!$purchaseItem) {
+                return response()->json(['message' => 'Purchase item nem található!'], 404);
+            }
+
+            return response()->json(['message' => 'Purchase item sikeresen törölve!'], 200);
+        } catch (\Throwable $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
         }
-
-        $purchaseItem->delete();
-
-        return response()->json(['message' => 'Purchase item deleted successfully!'], 200);
     }
+
 
     public function update(Request $request, $purchase_number, $product_id)
     {
         try {
-            $affectedRows = PurchaseItem::where('purchase_number', $purchase_number)
+            $updateItem = PurchaseItem::where('purchase_number', $purchase_number)
                 ->where('product_id', $product_id)
                 ->update(['quantity' => $request->input('quantity')]);
 
-            if ($affectedRows > 0) {
+            if ($updateItem > 0) {
                 return response()->json(['message' => 'Purchase item sikeresen updated-elve!'], 200);
             } else {
                 return response()->json(['message' => 'Purchase item nem található, vagy már frissítve van.'], 404);
