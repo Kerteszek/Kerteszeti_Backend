@@ -30,23 +30,6 @@ class PurchaseItemController extends Controller
         return $purchaseItem[0];
     }
 
-    /* public function destroy($purchase_number, $product_id)
-    {
-        try {
-            $purchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
-                ->where('product_id', $product_id)
-                ->delete();
-
-            if (!$purchaseItem) {
-                return response()->json(['message' => 'Purchase item nem található!'], 404);
-            }
-
-            return response()->json(['message' => 'Purchase item sikeresen törölve!'], 200);
-        } catch (\Throwable $e) {
-            return response()->json(['message' => $e->getMessage()], 500);
-        }
-    } */
-
     public function destroy($purchase_number, $product_id)
     {
         try {
@@ -73,28 +56,29 @@ class PurchaseItemController extends Controller
             return response()->json(['message' => $e->getMessage()], 500);
         }
     }
-
-
-
-
     public function update(Request $request, $purchase_number, $product_id)
     {
         try {
-            $updateItem = PurchaseItem::where('purchase_number', $purchase_number)
+            $oldPurchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
                 ->where('product_id', $product_id)
-                ->update(['quantity' => $request->input('quantity')]);
+                ->first();
 
-            if ($updateItem > 0) {
-                return response()->json(['message' => 'Purchase item sikeresen updated-elve!'], 200);
-            } else {
-                return response()->json(['message' => 'Purchase item nem található, vagy már frissítve van.'], 404);
+            if (!$oldPurchaseItem) {
+                return response()->json(['message' => 'Purchase item nem található!'], 404);
             }
+            $oldQuantity = $oldPurchaseItem->quantity;
+            $product = Product::find($product_id);
+            //return "RAktár: " . $product->in_stock . " Visszamenő: " . $oldQuantity;
+
+            $product->in_stock += $oldQuantity;
+            $product->in_stock -= $request->input('quantity');
+            $product->update();
+
+            return response()->json(['message' => 'Purchase item sikeresen frissítve!'], 200);
         } catch (\Throwable $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
     }
-
-
     public function store(Request $request)
     {
         //majd késöbb lekezelni bejelentkezett felhasználóra
