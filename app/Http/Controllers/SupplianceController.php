@@ -12,15 +12,30 @@ class SupplianceController extends Controller
         return Suppliance::all();
     }
 
-    public function show($id)
+    public function show($product, $suppliance_date)
     {
-        return Suppliance::find($id);
+        return Suppliance::where('product', $product)
+            ->where('suppliance_date', $suppliance_date)
+            ->first();
     }
 
-    public function destroy($id)
+    public function destroy($product, $suppliance_date)
     {
-        Suppliance::find($id)->delete();
+        try {
+            $deleted = Suppliance::where('product', $product)
+                ->where('suppliance_date', $suppliance_date)
+                ->delete();
+
+            if ($deleted === 0) {
+                return response()->json(['message' => 'Beszerzési item nem található!'], 404);
+            }
+
+            return response()->json(['message' => 'Beszerzési item sikeresen törölve!'], 200);
+        } catch (\Throwable $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
+
 
     public function update(Request $request, $product, $suppliance_date)
     {

@@ -7,8 +7,7 @@ use App\Models\PurchaseItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-
-
+use Illuminate\Validation\Rules\Exists;
 
 class PurchaseItemController extends Controller
 {
@@ -31,7 +30,7 @@ class PurchaseItemController extends Controller
         return $purchaseItem[0];
     }
 
-    public function destroy($purchase_number, $product_id)
+    /* public function destroy($purchase_number, $product_id)
     {
         try {
             $purchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
@@ -46,7 +45,36 @@ class PurchaseItemController extends Controller
         } catch (\Throwable $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
+    } */
+
+    public function destroy($purchase_number, $product_id)
+    {
+        try {
+            $purchaseItem = PurchaseItem::where('purchase_number', $purchase_number)
+                ->where('product_id', $product_id)
+                ->first();
+
+            if (!$purchaseItem) {
+                return response()->json(['message' => 'Purchase item nem található!'], 404);
+            }
+            $quantity = $purchaseItem->quantity;
+
+            //A delete miatt kell duplán csinálni, különben errort kapok
+            PurchaseItem::where('purchase_number', $purchase_number)
+                ->where('product_id', $product_id)
+                ->delete();
+
+            $product = Product::find($product_id);
+            $product->in_stock += $quantity;
+            $product->save();
+
+            return response()->json(['message' => 'Purchase item sikeresen törölve!'], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
+
+
 
 
     public function update(Request $request, $purchase_number, $product_id)
@@ -77,6 +105,7 @@ class PurchaseItemController extends Controller
             'quantity' => 'required|integer|min:1',
         ]);
 
+
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         }
@@ -99,7 +128,8 @@ class PurchaseItemController extends Controller
             if ($availableStock < $request->quantity) {
                 throw new \Exception('Nincs elég termék a raktáron!', 400);
             }
-
+            //Ha ezt kikommentelem, akkor kell a trigger
+            //EZ és a trigger egyszerre ne fusson
             $product->in_stock -= $request->quantity;
             $product->save();
 

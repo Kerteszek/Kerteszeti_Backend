@@ -73,7 +73,7 @@
 
     //New stock  (suppliance)
     Route::get('suppliances', [SupplianceController::class, 'index']);
-    Route::get('suppliances/{purchase_number}/{product_id}', [SupplianceController::class, 'show']);
-    //Route::patch('purchase_items/{purchase_number}/{product_id}', [SupplianceController::class, 'update']);
+    Route::get('suppliances/{product}/{suppliance_date}', [SupplianceController::class, 'show']);
+    //Route::patch('suppliances/{product}/{suppliance_date}', [SupplianceController::class, 'update']);
     Route::post('suppliances', [SupplianceController::class, 'store']);
-    //Route::delete('puritem_delete/{purchase_number}/{product_id}', [SupplianceController::class, 'destroy']);
+    Route::delete('suppliance_delete/{product}/{suppliance_date}', [SupplianceController::class, 'destroy']);
