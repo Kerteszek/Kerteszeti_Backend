@@ -74,6 +74,10 @@ class PurchaseItemController extends Controller
             $product->in_stock -= $request->input('quantity');
             $product->update();
 
+            PurchaseItem::where('purchase_number', $purchase_number)
+                ->where('product_id', $product_id)
+                ->update(['quantity' => $request->input('quantity')]);
+
             return response()->json(['message' => 'Purchase item sikeresen frissítve!'], 200);
         } catch (\Throwable $e) {
             return response()->json(['message' => $e->getMessage()], 500);
