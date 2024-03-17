@@ -77,3 +77,11 @@
     //Route::patch('suppliances/{product}/{suppliance_date}', [SupplianceController::class, 'update']);
     Route::post('suppliances', [SupplianceController::class, 'store']);
     Route::delete('suppliance_delete/{product}/{suppliance_date}', [SupplianceController::class, 'destroy']);
+
+
+    //Termék  végpontok
+    Route::get('products', [ProductController::class, 'index']);
+    Route::get('products/{product_id}', [ProductController::class, 'show']);
+    Route::patch('products/{product_id}', [ProductController::class, 'update']);
+    Route::post('products', [ProductController::class, 'store']);
+    Route::delete('products_delete/{product_id}', [ProductController::class, 'destroy']);

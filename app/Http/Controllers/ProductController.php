@@ -23,7 +23,7 @@ class ProductController extends Controller
         Product::find($id)->delete();
     }
 
-    public function update(Request $request, $id)
+    /* public function update(Request $request, $id)
     {
         $product = Product::find($id);
         $product->scientific_name = $request->scientific_name;
@@ -36,7 +36,28 @@ class ProductController extends Controller
         $product->reserved = $request->reserved;
         $product->priority = $request->priority;
         $product->save();
+    } */
+
+    public function update(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->fill($request->only([
+            'scientific_name',
+            'status',
+            'type',
+            'color',
+            'unit',
+            'price',
+            'in_stock',
+            'reserved',
+            'priority'
+        ]));
+
+        $product->save();
+
+        return response()->json($product);
     }
+
 
     public function store(Request $request)
     {
