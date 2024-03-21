@@ -22,6 +22,18 @@ return new class extends Migration
             
         END
         ');
+
+        DB::unprepared('CREATE TRIGGER reserved_insert 
+        AFTER INSERT ON basket_items
+        FOR EACH ROW
+        BEGIN
+            DECLARE available_stock INT;            
+            SELECT in_stock INTO available_stock FROM products WHERE product_id = NEW.product; 
+            IF available_stock >= NEW.amount THEN                
+                UPDATE products SET in_stock = in_stock - NEW.amount, reserved = reserved + NEW.amount WHERE product_id = NEW.product;
+            END IF;
+        END
+        ');
     }
 
     /**
@@ -30,5 +42,6 @@ return new class extends Migration
     public function down(): void
     {
         DB::unprepared('DROP TRIGGER IF EXISTS product_added');
+        DB::unprepared('DROP TRIGGER IF EXISTS reserved_insert');
     }
 };

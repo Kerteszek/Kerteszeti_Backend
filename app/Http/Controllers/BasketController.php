@@ -15,6 +15,7 @@ class BasketController extends Controller
 
     public function show($id)
     {
+
         return Basket::find($id);
     }
 

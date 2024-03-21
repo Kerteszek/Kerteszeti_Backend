@@ -20,7 +20,9 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        Product::find($id)->delete();
+        // Product::find($id)->delete(); //Nem lehet, így törölni.
+        //Soft delete kell
+
     }
 
     /* public function update(Request $request, $id)

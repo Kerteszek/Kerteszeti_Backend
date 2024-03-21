@@ -9,6 +9,7 @@ class Basket extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'basket_id';
     protected $fillable = [
         'user_id'
 

@@ -1,5 +1,7 @@
     <?php
 
+    use App\Http\Controllers\BasketController;
+    use App\Http\Controllers\BasketItemController;
     use App\Http\Controllers\PictureController;
     use App\Http\Controllers\PlantController;
     use App\Http\Controllers\ProductController;
@@ -84,4 +86,17 @@
     Route::get('products/{product_id}', [ProductController::class, 'show']);
     Route::patch('products/{product_id}', [ProductController::class, 'update']);
     Route::post('products', [ProductController::class, 'store']);
-    Route::delete('products_delete/{product_id}', [ProductController::class, 'destroy']);
+    //Route::delete('products_delete/{product_id}', [ProductController::class, 'destroy']);
+
+    //Basket végpontok
+    Route::get('baskets', [BasketController::class, 'index']);
+    Route::get('baskets/{basket_id}', [BasketController::class, 'show']);
+    Route::patch('baskets/{basket_id}', [BasketController::class, 'update']);
+    Route::post('baskets', [BasketController::class, 'store']);
+    //Route::delete('baskets_delete/{basket_id}', [BasketController::class, 'destroy']);
+    //Basket Item
+    Route::get('basket_items', [BasketItemController::class, 'index']);
+    Route::get('basket_items/{product}/{basket}', [BasketItemController::class, 'show']);
+    Route::patch('basket_items/{product}/{basket}', [BasketItemController::class, 'update']);
+    Route::post('basket_item', [BasketItemController::class, 'store']);
+    Route::delete('basket_items_delete/{product}/{basket}', [BasketItemController::class, 'destroy']);
