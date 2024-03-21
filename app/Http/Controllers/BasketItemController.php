@@ -18,16 +18,48 @@ class BasketItemController extends Controller
 
     public function show($basket, $product)
     {
-        return BasketItem::where('basket', $basket)
-            ->where('product', $product)
-            ->first();
+        try {
+            $basketItem = BasketItem::where('basket', $basket)
+                ->where('product', $product)
+                ->first();
+
+            if ($basketItem === null) {
+                return response()->json(['message' => 'Keresett BasketItem nem található'], 404);
+            }
+            return $basketItem;
+        } catch (\Throwable $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     public function destroy($basket, $product)
     {
-        BasketItem::find($basket, $product)->delete();
-    }
+        try {
+            $oldAmount = DB::table('basket_items')
+                ->where('basket', $basket)
+                ->where('product', $product)
+                ->value('amount');
 
+            if ($oldAmount === null) {
+                return response()->json(['message' => 'Keresett BasketItem nem található'], 404);
+            }
+            DB::table('products')
+                ->where('product_id', $product) //jót talál
+                ->update([
+
+                    'in_stock' => DB::raw("in_stock + " . $oldAmount),
+                    'reserved' => DB::raw("reserved  - " . $oldAmount)
+                ]);
+
+            BasketItem::where('basket', $basket)
+                ->where('product', $product)
+                ->delete();
+
+            return response()->json(['message' => 'Basket item sikeresen törölve!'], 200);
+        } catch (\Throwable $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
+    }
     public function update(Request $request, $basket, $product)
     {
         try {
@@ -41,7 +73,6 @@ class BasketItemController extends Controller
             if ($oldAmount === null) {
                 return response()->json(['message' => 'Keresett BasketItem nem található'], 404);
             }
-
             DB::table('products')
                 ->where('product_id', $product) //jót talál
                 ->update([
@@ -55,7 +86,7 @@ class BasketItemController extends Controller
                 ->where('product', $product)
                 ->update(['amount' => $request->input('amount')]); //ezt jól változtatja 
 
-            return response()->json(['message' => 'Basket item successfully updated!'], 200);
+            return response()->json(['message' => 'Basket item sikeresen frissitve!'], 200);
         } catch (\Throwable $e) {
             return response()->json(['message' => $e->getMessage()], 500);
         }
