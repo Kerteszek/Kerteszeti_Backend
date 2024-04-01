@@ -41,7 +41,8 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        $user->permission = $request->permission;
+
+        $user->permission = $request->has('permission') ? $request->permission : 2;
         $user->save();
     }
 }

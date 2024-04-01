@@ -17,4 +17,8 @@ Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
 
-require __DIR__.'/auth.php';
+Route::get('/token', function () {
+    return request()->session()->token();
+});
+
+require __DIR__ . '/auth.php';

@@ -58,7 +58,8 @@
     Route::get('product_frontend', [ProductController::class, 'frontendTermek']);
     //frontendTermekKeppel
     Route::get('product_w_pictures', [ProductController::class, 'frontendTermekKeppel']);
-
+    
+    Route::get('konkret_product/{product_id}', [ProductController::class, 'konkretTermekKeppel']);
 
     //Képek elérési útja
     Route::get('pictures', [PictureController::class, 'index']);
