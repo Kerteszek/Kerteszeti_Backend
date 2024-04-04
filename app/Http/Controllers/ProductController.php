@@ -100,10 +100,20 @@ class ProductController extends Controller
 
     public function konkretTermekKeppel($termek_id)
     {
-        return DB::select("SELECT pr.product_id , pr.scientific_name, pl.name,  u.name, p.picture_path
+        return DB::select("SELECT pr.product_id , pr.scientific_name, pl.name,  u.name as unit , pr.color , p.picture_path
+                            , pr.price , pr.in_stock
                             FROM products pr
                                 INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
                                 INNER JOIN units u ON u.unit_id = pr.unit
+                                INNER JOIN pictures p ON p.product = pr.product_id
+                                WHERE pr.product_id = $termek_id
+                                ");
+    }
+
+    public function konkretTermekKepei($termek_id)
+    {
+        return DB::select("SELECT pr.product_id ,  p.picture_path
+                            FROM products pr                               
                                 INNER JOIN pictures p ON p.product = pr.product_id
                                 WHERE pr.product_id = $termek_id
                                 ");
