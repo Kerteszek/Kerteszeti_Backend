@@ -84,20 +84,18 @@ class ProductController extends Controller
                                 INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
                                 INNER JOIN units u ON u.unit_id = pr.unit");
     }
-
     public function frontendTermekKeppel()
     {
         return DB::select("SELECT  pr.product_id , pr.scientific_name, u.name as unit , pr.color
-                            , pr.price , pr.in_stock , pl.name , p.picture_path 
+                            , pr.price , pr.in_stock , pl.name , p.picture_path , d.description
                         FROM products pr
                             INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
                             INNER JOIN units u ON u.unit_id = pr.unit
                             INNER JOIN pictures p ON p.product = pr.product_id
+                            INNER JOIN descriptions d ON pl.scientific_name = d.scientific_name
                             WHERE p.purpose = 'B'
                             ");
     }
-
-
     public function konkretTermekKeppel($termek_id)
     {
         return DB::select("SELECT pr.product_id , pr.scientific_name, pl.name,  u.name as unit , pr.color , p.picture_path

@@ -58,7 +58,9 @@
     Route::get('product_frontend', [ProductController::class, 'frontendTermek']);
     //frontendTermekKeppel
     Route::get('product_w_pictures', [ProductController::class, 'frontendTermekKeppel']);
-    
+    Route::get('description/{product_id}', [ProductController::class, 'description']);
+
+
     Route::get('konkret_product/{product_id}', [ProductController::class, 'konkretTermekKeppel']);
     Route::get('k_product_pictures/{product_id}', [ProductController::class, 'konkretTermekKepei']);
     //boritoKep

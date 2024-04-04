@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreign('product')->references('product_id')->on('products');
             $table->char("purpose")->default('P');
             $table->timestamps();
-
             $table->primary(['product', 'picture_path']);
         });
 
