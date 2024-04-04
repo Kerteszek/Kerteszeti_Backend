@@ -60,6 +60,8 @@
     Route::get('product_w_pictures', [ProductController::class, 'frontendTermekKeppel']);
     
     Route::get('konkret_product/{product_id}', [ProductController::class, 'konkretTermekKeppel']);
+    //boritoKep
+    Route::get('boritokep', [ProductController::class, 'boritoKep']);
 
     //Képek elérési útja
     Route::get('pictures', [PictureController::class, 'index']);

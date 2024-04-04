@@ -78,7 +78,8 @@ class ProductController extends Controller
 
     public function frontendTermek()
     {
-        return DB::select("SELECT pr.product_id , pr.scientific_name, pl.name,  u.name
+        return DB::select("SELECT pr.product_id , pr.scientific_name, u.name as unit , pr.color
+                            , pr.price , pr.in_stock , pl.name
                             FROM products pr
                                 INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
                                 INNER JOIN units u ON u.unit_id = pr.unit");
@@ -86,13 +87,16 @@ class ProductController extends Controller
 
     public function frontendTermekKeppel()
     {
-        return DB::select("SELECT pr.product_id , pr.scientific_name, pl.name,  u.name, p.picture_path
-                            FROM products pr
-                                INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
-                                INNER JOIN units u ON u.unit_id = pr.unit
-                                INNER JOIN pictures p ON p.product = pr.product_id
-                                ");
+        return DB::select("SELECT  pr.product_id , pr.scientific_name, u.name as unit , pr.color
+                            , pr.price , pr.in_stock , pl.name , p.picture_path 
+                        FROM products pr
+                            INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
+                            INNER JOIN units u ON u.unit_id = pr.unit
+                            INNER JOIN pictures p ON p.product = pr.product_id
+                            WHERE p.purpose = 'B'
+                            ");
     }
+
 
     public function konkretTermekKeppel($termek_id)
     {
@@ -103,5 +107,18 @@ class ProductController extends Controller
                                 INNER JOIN pictures p ON p.product = pr.product_id
                                 WHERE pr.product_id = $termek_id
                                 ");
+    }
+
+    public function boritoKep()
+    {
+        $results = DB::select("
+        SELECT pr.product_id, p.picture_path
+        FROM products pr
+        INNER JOIN pictures p ON p.product = pr.product_id
+        WHERE p.picture_path LIKE 'kepek/termekek/boritokep/%'
+        
+    ");
+
+        return $results;
     }
 }
