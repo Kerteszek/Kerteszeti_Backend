@@ -132,4 +132,14 @@ class PurchaseItemController extends Controller
             return response()->json(['message' => $e->getMessage()], $statusCode);
         }
     }
+
+    public function rendelesek( $user_id){
+        return DB::select("SELECT pu.purchase_number, p.product_id, pi.quantity, p.price , p.scientific_name, pu.shopping_date, pu.grand_total
+        FROM purchase_items pi
+            INNER JOIN purchases pu ON pu.purchase_number = pi.purchase_number                                     
+            INNER JOIN products p ON pi.product_id = p.product_id
+            WHERE pu.buyer = $user_id
+           
+            ");
+    }
 }

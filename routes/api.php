@@ -69,6 +69,8 @@
     //Képek elérési útja
     Route::get('pictures', [PictureController::class, 'index']);
 
+    //Rendelések vissza 
+    Route::get('rendelesek/{user_id}', [PurchaseItemController::class, 'rendelesek']);
 
     //Trigger útvonalak teszthez
 

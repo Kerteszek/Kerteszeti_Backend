@@ -27,6 +27,13 @@ return new class extends Migration
             ['purchase_number' => 10000000, 'product_id' => 1006, 'quantity' => 5],
             ['purchase_number' => 10000000, 'product_id' => 1008, 'quantity' => 4],
             ['purchase_number' => 10000001, 'product_id' => 1006, 'quantity' => 21],
+            ['purchase_number' => 10000001, 'product_id' => 1007, 'quantity' => 21],
+            ['purchase_number' => 10000001, 'product_id' => 1002, 'quantity' => 5],
+            ['purchase_number' => 10000001, 'product_id' => 1008, 'quantity' => 2],
+            ['purchase_number' => 10000002, 'product_id' => 1008, 'quantity' => 2],
+            ['purchase_number' => 10000002, 'product_id' => 1002, 'quantity' => 2],
+            ['purchase_number' => 10000002, 'product_id' => 1003, 'quantity' => 2],
+            ['purchase_number' => 10000002, 'product_id' => 1009, 'quantity' => 2],
 
             //['buyer' => 3],
             //['buyer' => 1],
