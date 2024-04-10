@@ -15,6 +15,8 @@ return new class extends Migration
         Schema::create('baskets', function (Blueprint $table) {
             $table->integer('basket_id')->autoIncrement()->startingValue(100000);
             $table->foreignId('user_id')->references('id')->on('users');
+            $table->dateTime('order_date')->default(now());          
+            $table->boolean('finished_order')->default(false);
             $table->timestamps();
         });
 

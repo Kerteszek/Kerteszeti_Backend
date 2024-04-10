@@ -36,6 +36,8 @@ return new class extends Migration
             ['product' => 1003, 'picture_path' => 'kepek/termekek/1000-700/virag10.jpg', 'purpose' => 'P'],
             ['product' => 1004, 'picture_path' => 'kepek/termekek/1000-700/virag11.jpg', 'purpose' => 'P'],
             ['product' => 1005, 'picture_path' => 'kepek/termekek/1000-700/virag12.jpg', 'purpose' => 'P'],
+            ['product' => 1000, 'picture_path' => 'kepek/termekek/1000-700/virag11.jpg', 'purpose' => 'P'],
+            ['product' => 1000, 'picture_path' => 'kepek/termekek/1000-700/virag12.jpg', 'purpose' => 'P'],
 
             //Fontos ezekből csak egy lehet!
             ['product' => 1000, 'picture_path' => 'kepek/termekek/boritokep/virag1.jpg', 'purpose' => 'B'],
