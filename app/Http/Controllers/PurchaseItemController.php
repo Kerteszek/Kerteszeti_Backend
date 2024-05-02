@@ -19,9 +19,9 @@ class PurchaseItemController extends Controller
     public function show($purchase_number, $product_id)
     {
         $purchaseItem = PurchaseItem::where('purchase_number',  $purchase_number, 'and')
-            ->where('product_id',  $product_id)           
+            ->where('product_id',  $product_id)
             ->get();
-       
+
 
         if ($purchaseItem->isEmpty()) {
             return response()->json(['message' => 'Purchase item nem létezik!'], 404);
@@ -131,16 +131,16 @@ class PurchaseItemController extends Controller
             return response()->json(['message' => $e->getMessage()], $statusCode);
         }
     }
-   
 
-    public function rendelesek( $user_id){
-        return DB::select("SELECT pu.purchase_number, p.product_id, pi.quantity, p.price , p.scientific_name, pu.shopping_date, pu.grand_total
-        FROM purchase_items pi
-            INNER JOIN purchases pu ON pu.purchase_number = pi.purchase_number                                     
-            INNER JOIN products p ON pi.product_id = p.product_id
-            WHERE pu.buyer = $user_id
-           
-            ");
+
+    public function rendelesek($user_id)
+    {
+        return DB::select("SELECT pu.purchase_number, p.product_id, pi.quantity, p.price , p.scientific_name, pu.shopping_date, pu.grand_total , pl.name
+            FROM purchase_items pi
+                INNER JOIN purchases pu ON pu.purchase_number = pi.purchase_number                                     
+                INNER JOIN products p ON pi.product_id = p.product_id
+                INNER JOIN plants pl ON pl.scientific_name = p.scientific_name
+                WHERE pu.buyer = $user_id
+            ORDER BY pu.purchase_number DESC");
     }
-
 }
