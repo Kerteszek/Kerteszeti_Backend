@@ -19,10 +19,9 @@ class PurchaseItemController extends Controller
     public function show($purchase_number, $product_id)
     {
         $purchaseItem = PurchaseItem::where('purchase_number',  $purchase_number, 'and')
-            ->where('product_id',  $product_id)
-            //->first();
+            ->where('product_id',  $product_id)           
             ->get();
-        // return $purchaseItem;
+       
 
         if ($purchaseItem->isEmpty()) {
             return response()->json(['message' => 'Purchase item nem létezik!'], 404);
@@ -132,6 +131,7 @@ class PurchaseItemController extends Controller
             return response()->json(['message' => $e->getMessage()], $statusCode);
         }
     }
+   
 
     public function rendelesek( $user_id){
         return DB::select("SELECT pu.purchase_number, p.product_id, pi.quantity, p.price , p.scientific_name, pu.shopping_date, pu.grand_total
@@ -142,4 +142,5 @@ class PurchaseItemController extends Controller
            
             ");
     }
+
 }

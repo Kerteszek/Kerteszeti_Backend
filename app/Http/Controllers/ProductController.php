@@ -25,21 +25,6 @@ class ProductController extends Controller
 
     }
 
-    /* public function update(Request $request, $id)
-    {
-        $product = Product::find($id);
-        $product->scientific_name = $request->scientific_name;
-        $product->status = $request->status;
-        $product->type = $request->type;
-        $product->color = $request->color;
-        $product->unit = $request->unit;
-        $product->price = $request->price;
-        $product->in_stock = $request->in_stock;
-        $product->reserved = $request->reserved;
-        $product->priority = $request->priority;
-        $product->save();
-    } */
-
     public function update(Request $request, $id)
     {
         $product = Product::find($id);
@@ -123,7 +108,7 @@ class ProductController extends Controller
         SELECT pr.product_id, p.picture_path
         FROM products pr
         INNER JOIN pictures p ON p.product = pr.product_id
-        WHERE p.picture_path LIKE 'kepek/termekek/boritokep/%'
+        WHERE p.purpose = 'B'
         
     ");
 

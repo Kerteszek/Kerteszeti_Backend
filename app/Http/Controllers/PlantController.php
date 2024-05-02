@@ -25,16 +25,18 @@ class PlantController extends Controller
     public function update(Request $request, $id)
     {
         $plant = Plant::find($id);
+        $plant->scientific_name = $request->scientific_name;
         $plant->name = $request->name;
-        $plant->ancestor_category = $request->ancestor_category;
+        $plant->plant_category = $request->plant_category;
         $plant->save();
     }
 
     public function store(Request $request)
     {
         $plant = new Plant();
+        $plant->scientific_name = $request->scientific_name;
         $plant->name = $request->name;
-        $plant->ancestor_category = $request->ancestor_category;
+        $plant->plant_category = $request->plant_category;
         $plant->save();
     }
 }
