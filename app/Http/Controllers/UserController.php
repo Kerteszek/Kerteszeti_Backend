@@ -45,4 +45,31 @@ class UserController extends Controller
         $user->permission = $request->has('permission') ? $request->permission : 2;
         $user->save();
     }
+
+    public function updatePassword(Request $request)
+    {
+        $user = auth()->user();
+
+        $request->validate([
+            'password' => 'required|min:8|confirmed',
+        ]);
+
+        $user->password = Hash::make($request->password);
+        $user->save();
+    }
+
+    public function verifyCurrentPassword(Request $request)
+    {
+        $user = auth()->user();
+
+        $request->validate([
+            'current_password' => 'required',
+        ]);
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return 0;
+        }
+
+        return 1;
+    }
 }

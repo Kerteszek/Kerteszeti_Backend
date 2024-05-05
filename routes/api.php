@@ -30,7 +30,9 @@
 
     //felhasználó réteg (regisztálva, bejelentkezve)
     Route::middleware(['auth.basic'])->group(function () {
-
+       
+        Route::post('password_change', [UserController::class, 'updatePassword']);
+        Route::post('verify_password', [UserController::class, 'verifyCurrentPassword']);
 
         Route::middleware(['admin'])->group(function () {
             //elérheti az admin, és a superAdmin
