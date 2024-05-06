@@ -72,7 +72,7 @@ class ProductController extends Controller
     public function frontendTermekKeppel()
     {
         return DB::select("SELECT  pr.product_id , pr.scientific_name, u.name as unit , pr.color
-                            , pr.price , pr.in_stock , pl.name , p.picture_path , d.description
+                            , pr.price , pr.in_stock , pl.name , p.picture_path , d.description, pr.priority, pl.plant_category
                         FROM products pr
                             INNER JOIN plants pl ON pl.scientific_name = pr.scientific_name
                             INNER JOIN units u ON u.unit_id = pr.unit
