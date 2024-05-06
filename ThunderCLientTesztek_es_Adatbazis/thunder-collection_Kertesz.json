@@ -1,0 +1,885 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Kertesz",
+    "collectionId": "e9612947-7c5a-4325-b402-10304b013f8a",
+    "dateExported": "2024-05-06T21:17:05.951Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "888d82cc-d7a0-46e9-a2c7-f0021d9ca8b1",
+            "name": "Trigger tesztek",
+            "containerId": "",
+            "created": "2024-03-11T14:45:43.841Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "Puchase_Teszts",
+            "containerId": "",
+            "created": "2024-03-11T19:45:15.653Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "3f1029b2-f3d5-4f00-80bb-91a6af98aa61",
+            "name": "User_Teszt",
+            "containerId": "",
+            "created": "2024-03-15T07:10:51.865Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "Product_Teszt",
+            "containerId": "",
+            "created": "2024-03-15T07:11:12.032Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "5ae8a89c-3b1b-40e9-a48b-19c9b79730fa",
+            "name": "Stock handeling",
+            "containerId": "888d82cc-d7a0-46e9-a2c7-f0021d9ca8b1",
+            "created": "2024-03-15T11:37:48.729Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "Basket és BasketItem Tesztek ",
+            "containerId": "",
+            "created": "2024-03-18T16:38:41.197Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "ecd0aee8-9124-47f4-a782-20db7b4001e0",
+            "name": "Basket_Tesztek",
+            "containerId": "888d82cc-d7a0-46e9-a2c7-f0021d9ca8b1",
+            "created": "2024-03-18T16:13:08.660Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "9f28e739-65d0-41c3-8ad5-a89412f327fe",
+            "name": "Login_Registerű",
+            "containerId": "",
+            "created": "2024-03-24T18:30:44.775Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "f17d4aa6-247c-4e44-93b3-0c860bb05217",
+            "name": "Plants",
+            "containerId": "",
+            "created": "2024-04-24T14:33:41.332Z",
+            "sortNum": 80000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "8f4407ea-fbde-4327-a319-c8e81d5b27e5",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "3f1029b2-f3d5-4f00-80bb-91a6af98aa61",
+            "name": "get Users",
+            "url": "users/2",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-03-10T19:42:20.500Z",
+            "modified": "2024-04-10T03:07:40.316Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "07a57d16-795c-456b-ac02-0489a94ef498",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "5ae8a89c-3b1b-40e9-a48b-19c9b79730fa",
+            "name": "Purchase teszt",
+            "url": "purchase_items/?purchase_number=10000004&product_id=1008&quantity=1",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-11T14:46:01.463Z",
+            "modified": "2024-03-16T18:18:07.592Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "purchase_number",
+                    "value": "10000004",
+                    "isPath": false
+                },
+                {
+                    "name": "product_id",
+                    "value": "1008",
+                    "isPath": false
+                },
+                {
+                    "name": "quantity",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "78f9e96a-c408-492e-b89c-88ab1b22cc4f",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "POST PurchaseItem",
+            "url": "purchase_items?purchase_number=10000002&product_id=1004&quantity=10",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-11T19:21:13.697Z",
+            "modified": "2024-03-15T08:06:08.356Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "purchase_number",
+                    "value": "10000002",
+                    "isPath": false
+                },
+                {
+                    "name": "product_id",
+                    "value": "1004",
+                    "isPath": false
+                },
+                {
+                    "name": "quantity",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "57b3420e-4b43-499a-829f-8a2971b1624c",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "POST Purchase",
+            "url": "purchases?buyer=2&shopping_date=2024-01-01&grand_total",
+            "method": "POST",
+            "sortNum": 11250,
+            "created": "2024-04-20T21:30:25.381Z",
+            "modified": "2024-04-20T21:31:52.847Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "buyer",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "shopping_date",
+                    "value": "2024-01-01",
+                    "isPath": false
+                },
+                {
+                    "name": "grand_total",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "a0b5d5cb-28d7-4315-a95f-ba82c13505bc",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "PATCH PurchaseItem",
+            "url": "purchase_items/10000000/1008/?purchase_number=10000004&product_id=1008&quantity=2",
+            "method": "PATCH",
+            "sortNum": 12500,
+            "created": "2024-03-11T19:47:08.127Z",
+            "modified": "2024-03-16T16:46:10.346Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "purchase_number",
+                    "value": "10000004",
+                    "isPath": false
+                },
+                {
+                    "name": "product_id",
+                    "value": "1008",
+                    "isPath": false
+                },
+                {
+                    "name": "quantity",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "reqType": "patch",
+            "tests": []
+        },
+        {
+            "_id": "d240e603-6cc3-4033-b683-42efdc4db9f9",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "PATCH PurchaseItem Copy",
+            "url": "purchase_items/10000000/1008/?quantity=12",
+            "method": "PATCH",
+            "sortNum": 13750,
+            "created": "2024-03-12T19:56:08.652Z",
+            "modified": "2024-03-12T20:10:49.969Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "quantity",
+                    "value": "12",
+                    "isPath": false
+                }
+            ],
+            "reqType": "patch",
+            "tests": []
+        },
+        {
+            "_id": "b7feff8c-e852-421d-bf0c-ea1d592c0d63",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "PATCH PurchaseItem Copy Copy",
+            "url": "purchase_items/10000004/1008/",
+            "method": "PATCH",
+            "sortNum": 14375,
+            "created": "2024-03-12T20:23:07.137Z",
+            "modified": "2024-03-16T18:18:16.624Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"purchase_number\": 10000004,\n    \"product_id\": 1008,\n    \"quantity\": 2\n}",
+                "form": []
+            },
+            "reqType": "patch",
+            "tests": []
+        },
+        {
+            "_id": "929e66ef-c0ab-4431-9463-35944e51a7ee",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "5ae8a89c-3b1b-40e9-a48b-19c9b79730fa",
+            "name": " Purchase teszt  II",
+            "url": "purchase_items/?purchase_number=10000004&product_id=1008&quantity=12",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2024-03-15T11:38:05.581Z",
+            "modified": "2024-03-15T11:38:05.581Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "purchase_number",
+                    "value": "10000004",
+                    "isPath": false
+                },
+                {
+                    "name": "product_id",
+                    "value": "1008",
+                    "isPath": false
+                },
+                {
+                    "name": "quantity",
+                    "value": "12",
+                    "isPath": false
+                }
+            ],
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "518be75d-c509-42b8-add2-29f6337a0c86",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "3f1029b2-f3d5-4f00-80bb-91a6af98aa61",
+            "name": "get Konkrét User",
+            "url": "users",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-04-06T12:38:10.580Z",
+            "modified": "2024-04-06T12:38:10.580Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6acf9220-99e0-403a-8317-5c9a8b082b04",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "DELETE PurchaseItem ",
+            "url": "puritem_delete/10000004/1008",
+            "method": "DELETE",
+            "sortNum": 18750,
+            "created": "2024-03-14T14:36:46.031Z",
+            "modified": "2024-03-16T13:28:23.898Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "sadmin@gmail.com",
+                    "password": "Aa123@"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "e2e27ef9-d2a5-4721-b585-1f3558aa1181",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "3f1029b2-f3d5-4f00-80bb-91a6af98aa61",
+            "name": "Delete Users ",
+            "url": "user_delete/7",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-03-10T19:44:48.952Z",
+            "modified": "2024-03-10T19:51:02.566Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "cb8432c2-3d5b-4491-8dc8-b44b8b2a6b39",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "GET PurchaseItem ",
+            "url": "purchases",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-11T19:45:51.331Z",
+            "modified": "2024-04-20T21:29:44.973Z",
+            "headers": []
+        },
+        {
+            "_id": "20c4a2e7-ed0e-4a39-b18e-07dda2c3fc94",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "5ae8a89c-3b1b-40e9-a48b-19c9b79730fa",
+            "name": "DELETE Stock",
+            "url": "suppliance_delete/1005/2024-03-10",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-03-15T09:42:56.774Z",
+            "modified": "2024-03-15T18:01:40.008Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "2a0cd91e-5b56-4a7e-80ba-e246558a7340",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "POST PurchaseItem",
+            "url": "purchase_items",
+            "method": "POST",
+            "sortNum": 21250,
+            "created": "2024-05-02T16:30:17.194Z",
+            "modified": "2024-05-02T16:31:40.272Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"product_id\": 1000,\n  \"purchase_number\": 10000000,\n  \"quantity\": 3\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "72e7b39e-2156-4dca-91fc-1455537a2c81",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "GET Purchase",
+            "url": "purchases",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-04-20T21:25:42.699Z",
+            "modified": "2024-04-20T21:32:48.938Z",
+            "headers": []
+        },
+        {
+            "_id": "02caf3a4-9ff2-4ceb-b659-d19baf657ab9",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "GET PurchaseItem  SHOW",
+            "url": "purchase_items/10000000/1008",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-12T14:26:19.018Z",
+            "modified": "2024-03-12T20:09:38.685Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "43d938f9-dee3-4405-8966-2a64ff470228",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "5ae8a89c-3b1b-40e9-a48b-19c9b79730fa",
+            "name": "New stock Whitout given date",
+            "url": "suppliances/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-03-15T09:52:46.965Z",
+            "modified": "2024-03-15T09:53:30.653Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"product\": 1005,\n    \"number_of_items\": 100,\n    \"purchase_price\": 1200\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "618f29ab-f227-447f-8b2b-faa79b13d9d3",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "Aktualis Vásárlás",
+            "url": "akt_vasarlas/2/2024-05-02",
+            "method": "GET",
+            "sortNum": 35000,
+            "created": "2024-05-02T18:04:35.640Z",
+            "modified": "2024-05-02T18:52:32.031Z",
+            "headers": []
+        },
+        {
+            "_id": "75ceae89-8852-40f1-bd3c-d3f3233951fd",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "5ae8a89c-3b1b-40e9-a48b-19c9b79730fa",
+            "name": "New stock Whith given date",
+            "url": "suppliances/",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-03-15T17:14:32.624Z",
+            "modified": "2024-03-15T17:15:16.825Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"product\": 1005,\n    \"suppliance_date\": \"2024-03-10\", \n    \"number_of_items\": 100,\n    \"purchase_price\": 1200\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "37b59bb6-cfc4-4550-8dce-f30c596e4fa7",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f2220cb4-026b-4509-94e3-a9971362136c",
+            "name": "GET PurchaseItem  SHOW Copy",
+            "url": "purchases/10000001",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-20T21:32:19.023Z",
+            "modified": "2024-04-20T21:33:47.727Z",
+            "headers": []
+        },
+        {
+            "_id": "770ed807-c3f9-4a47-9b91-09c8dedc42fb",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "GET/ INDEX Termek",
+            "url": "products",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-17T13:06:36.491Z",
+            "modified": "2024-03-17T13:08:38.580Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "79ec592d-708c-4bb0-9367-10554ab6e885",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "GET/ INDEX Basket",
+            "url": "baskets",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-18T16:38:41.197Z",
+            "modified": "2024-03-18T16:48:55.941Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "663fab1c-b984-4bbb-b12c-d298d587883e",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "GET/ INDEX BasketItem",
+            "url": "basket_items",
+            "method": "GET",
+            "sortNum": 55000,
+            "created": "2024-03-18T17:58:24.928Z",
+            "modified": "2024-03-18T17:58:57.906Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "96fccf8c-0819-4755-a89f-cacad35d4ef4",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "GET Konkrét Product w Kép",
+            "url": "konkret_product/1003",
+            "method": "GET",
+            "sortNum": 55000,
+            "created": "2024-04-01T19:44:19.083Z",
+            "modified": "2024-04-01T19:48:59.200Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "af2fa403-6545-4ab0-a334-9c64296b496d",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "GET Konkrét Product w Képei",
+            "url": "k_product_pictures/1003",
+            "method": "GET",
+            "sortNum": 56250,
+            "created": "2024-04-04T14:21:39.821Z",
+            "modified": "2024-04-04T17:41:44.685Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "20d1a68b-3300-4bef-929e-bc58e6ac2a13",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "GET Összes Product w Kép",
+            "url": "product_w_pictures",
+            "method": "GET",
+            "sortNum": 57500,
+            "created": "2024-04-01T20:09:13.152Z",
+            "modified": "2024-04-01T20:09:18.240Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1f42b67b-b408-4e10-8613-954c59ef6052",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "GET Összes boritokep",
+            "url": "boritokep",
+            "method": "GET",
+            "sortNum": 58125,
+            "created": "2024-04-01T21:17:08.890Z",
+            "modified": "2024-04-01T21:17:29.382Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d6a2e3f9-6fd9-42f6-ada3-27af6fe1b478",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "GET Összes Product no kép",
+            "url": "product_frontend",
+            "method": "GET",
+            "sortNum": 58750,
+            "created": "2024-04-01T20:23:53.507Z",
+            "modified": "2024-04-01T20:23:58.954Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "28c1c4a1-83c5-4840-80fe-93aaf88fa195",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "SHOW Termek",
+            "url": "products/1012",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-17T13:08:44.407Z",
+            "modified": "2024-03-18T16:15:32.450Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "34f18326-b6f0-4d9b-8112-476662892853",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "SHOW Basket",
+            "url": "baskets/100001",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-18T16:38:41.198Z",
+            "modified": "2024-03-18T16:49:41.481Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "2a549594-ff88-4a07-93de-4de7399d90be",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "SHOW BasketItem",
+            "url": "basket_items/100001/1002",
+            "method": "GET",
+            "sortNum": 65000,
+            "created": "2024-03-18T18:08:29.090Z",
+            "modified": "2024-03-21T13:27:29.601Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "6aaa27f3-e303-4b32-83f6-c5f71a6675f3",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "PATCH Termek",
+            "url": "products/1008?price=15000",
+            "method": "PATCH",
+            "sortNum": 70000,
+            "created": "2024-03-17T13:09:41.309Z",
+            "modified": "2024-03-17T14:01:06.475Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "price",
+                    "value": "15000",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "2fab07f8-c8bb-4bff-9faa-266c463f60e5",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "PATCH Basket",
+            "url": "baskets/100001?user_id=2",
+            "method": "PATCH",
+            "sortNum": 70000,
+            "created": "2024-03-18T16:38:41.199Z",
+            "modified": "2024-03-18T17:15:47.984Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "user_id",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "reqType": "patch",
+            "tests": []
+        },
+        {
+            "_id": "2f058b2e-a3ae-488c-be6d-582968eaee58",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "PATCH BasketItem",
+            "url": "basket_items/100001/1002",
+            "method": "PATCH",
+            "sortNum": 75000,
+            "created": "2024-03-18T18:11:20.814Z",
+            "modified": "2024-03-21T13:05:56.120Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"amount\": 16\n}",
+                "form": []
+            },
+            "reqType": "patch",
+            "tests": []
+        },
+        {
+            "_id": "1415fbd5-d48d-4186-9d24-57a7bdd4c19a",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "DELETE BasketItem",
+            "url": "basket_items_delete/100001/1002",
+            "method": "DELETE",
+            "sortNum": 77500,
+            "created": "2024-03-18T19:56:41.224Z",
+            "modified": "2024-03-21T13:25:26.273Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "17313349-9d59-4867-8075-1dea9efa37da",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "afdf46bc-994a-4d18-be49-57e8cb502ea1",
+            "name": "POST Termek",
+            "url": "products/",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-03-17T14:52:49.717Z",
+            "modified": "2024-03-17T15:26:04.743Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"scientific_name\": \"Salvia officinalis\",\r\n  \"status\": true,\r\n  \"type\": true,\r\n  \"color\": \"teszt\",\r\n  \"unit\": 200,\r\n  \"price\": 1000,\r\n  \"in_stock\": 66,\r\n  \"reserved\": 0,\r\n  \"priority\": false\r\n}\r\n",
+                "form": []
+            },
+            "reqType": "patch",
+            "tests": []
+        },
+        {
+            "_id": "91d36791-2304-4aec-8100-a7d650646aab",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "POST Basket",
+            "url": "baskets/",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-03-18T16:38:41.201Z",
+            "modified": "2024-03-19T14:23:44.581Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user_id\": 4\n}\n  \n",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "1251ec06-8e93-40fd-8700-479c646b7b0d",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "cc19937c-0733-4804-a536-586b38dd34d9",
+            "name": "POST BasketItem",
+            "url": "basket_item/",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2024-03-18T18:11:23.549Z",
+            "modified": "2024-03-19T15:21:56.876Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"basket\": 100001,\n  \"product\": 1002,\n  \"amount\": 10\n}\n  \n",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "b493d66d-cbfd-4041-b5b0-0f6803b45b8b",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "9f28e739-65d0-41c3-8ad5-a89412f327fe",
+            "name": "Post new user",
+            "url": "http://127.0.0.1:8000/register",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-03-24T18:30:57.174Z",
+            "modified": "2024-03-24T21:19:56.230Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Vásárló\",\n    \"email\": \"vasarlo@gmail.com\",\n    \"password\": \"AAA123\",\n    \"permission\": 2\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ac43a471-a856-4d00-8aec-0465c98d753a",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "",
+            "name": "get rendelesek",
+            "url": "rendelesek/2",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-04-10T03:06:08.889Z",
+            "modified": "2024-05-02T22:37:02.290Z",
+            "headers": []
+        },
+        {
+            "_id": "9d63ffbf-3450-4ed1-bd72-3e573a346295",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "",
+            "name": "Get BoritoKepek",
+            "url": "boritokep",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-05-02T08:20:42.393Z",
+            "modified": "2024-05-02T09:11:46.363Z",
+            "headers": []
+        },
+        {
+            "_id": "34bbe476-8fa9-448b-898b-a68cdc13653e",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "f17d4aa6-247c-4e44-93b3-0c860bb05217",
+            "name": "POST új  Plants",
+            "url": "plants",
+            "method": "POST",
+            "sortNum": 130000,
+            "created": "2024-04-24T14:36:39.098Z",
+            "modified": "2024-04-24T14:38:43.735Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"scientific_name\": \"LOL\",\n  \"name\": \"LOL NAME\",\n  \"plant_category\": 101\n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6de39a51-f21a-4378-be73-e89feb8f449b",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "3f1029b2-f3d5-4f00-80bb-91a6af98aa61",
+            "name": "PasswordChange",
+            "url": "password_change/2",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-05-05T15:21:36.515Z",
+            "modified": "2024-05-05T16:04:14.137Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 12345678\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "belus@gmail.com",
+                    "password": "Aa123@"
+                }
+            }
+        },
+        {
+            "_id": "b0f0b870-add3-4ece-9e63-13aee6d8754c",
+            "colId": "e9612947-7c5a-4325-b402-10304b013f8a",
+            "containerId": "3f1029b2-f3d5-4f00-80bb-91a6af98aa61",
+            "name": "verify_password",
+            "url": "verify_password",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-05-05T16:00:58.258Z",
+            "modified": "2024-05-05T16:01:49.590Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 12345678\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "belus@gmail.com",
+                    "password": "Aa123@"
+                }
+            }
+        }
+    ],
+    "settings": {
+        "auth": {
+            "type": "basic",
+            "basic": {
+                "username": "sadmin@gmail.com",
+                "password": "Aa123@"
+            }
+        },
+        "options": {
+            "baseUrl": "http://localhost:8000/api/"
+        }
+    },
+    "ref": "ohabHfVXO7BkSK_iruGnwZu1LgTe54qbfXyl_I8X_knFlOKQUMYH0dazsbPCQiK4-WM0rZpQnqW3uLcrdQHPgQ"
+}
